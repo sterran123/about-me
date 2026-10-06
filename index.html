@@ -28,6 +28,7 @@
         <a href="#likes">좋아하는 것</a>
         <a href="#scope">공개 범위</a>
         <a href="#links">연결</a>
+        <a href="#guestbook">방명록</a>
       </nav>
       <button id="motionToggle" class="motion-toggle" type="button" role="switch" aria-checked="false">
         <span class="motion-label">움직임 줄이기</span>
@@ -42,6 +43,7 @@
         <p class="hand-note">✎ 직접 만든 페이지 · 2026. 10</p>
         <h1 id="hero-title">안녕하세요,<br><span class="hl">김민기</span>입니다</h1>
         <p class="lead">꼼꼼하게 만들고, 끝까지 해내고, 같이 고민하는 사람.</p>
+        <p class="motto">“오늘도 한 걸음 — 어제보다 조금 나은 내일로.”</p>
         <p class="purpose"><span class="purpose-tag">이 페이지의 목적</span> 나를 처음 만나는 누구에게나 — 함께 일할 사람이든, 채용 담당자든, 친구든 — 김민기가 어떤 사람인지 한 화면에서 보여주기 위해 만든 공개 소개입니다.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#strengths">강점 펼쳐보기</a>
@@ -184,15 +186,15 @@
       <div class="now-grid">
         <div class="now-card now-lavender">
           <p class="now-label">집중 중</p>
-          <p>과제와 작은 웹 페이지 만들기 — 직접 눌러 보고 고치는 시간이 제일 재밌습니다.</p>
+          <p>데이터를 다루는 챗봇 서비스와 이번 소개 페이지 — 직접 눌러 보고, 고치고, 다시 눌러 보는 시간이 제일 재밌습니다.</p>
         </div>
         <div class="now-card now-mint">
           <p class="now-label">배우는 중</p>
-          <p>GitHub에 코드를 올리고 Pages로 공개하는 흐름을 이번에 처음 끝까지 해봤습니다.</p>
+          <p>GitHub에 코드를 올리고 Pages로 공개하는 흐름을 이번에 처음 끝까지 해봤습니다. AI가 만든 음악을 듣고 만드는 쪽에도 빠져 있습니다.</p>
         </div>
         <div class="now-card now-butter">
           <p class="now-label">좋아하는 순간</p>
-          <p>콘솔에 빨간 오류가 하나도 없을 때. 그 순간이 제일 뿌듯합니다.</p>
+          <p>콘솔에 빨간 오류가 하나도 없을 때, 그리고 내가 만든 게 실제 주소로 열릴 때. 그 두 순간이 제일 뿌듯합니다.</p>
         </div>
       </div>
       <ol class="timeline" aria-label="걸어온 길">
@@ -221,6 +223,8 @@
       </div>
       <ul class="like-cloud">
         <li>Firebase</li>
+        <li>챗봇 만들기</li>
+        <li><a href="https://www.youtube.com/@%EB%B0%8D%EC%9D%B4%EB%AE%A4%EC%A7%81%ED%95%98%EC%9A%B0%EC%8A%A4" target="_blank" rel="noopener">AI 음악 만들기 ↗<span class="sr-only">(새 탭에서 열림)</span></a></li>
         <li>체크리스트</li>
         <li>콘솔 오류 0 만들기</li>
         <li>문서 정리</li>
@@ -269,10 +273,9 @@
           <span class="link-card-desc">이 페이지의 코드 전체 — 꼼꼼함의 실제 근거</span>
           <span class="link-card-go" aria-hidden="true">↗</span>
         </a>
-        <!-- TODO(학생): Firebase로 배포한 작업 주소가 있다면 교체하세요. 없으면 이 카드를 삭제해도 됩니다 -->
-        <a class="link-card" href="https://firebase.google.com/docs" target="_blank" rel="noopener">
-          <span class="link-card-title">주로 쓰는 도구: Firebase<span class="sr-only"> (새 탭에서 열림)</span></span>
-          <span class="link-card-desc">인증·데이터베이스·호스팅까지 직접 붙여본 도구</span>
+        <a class="link-card" href="https://app.data-tool.kr" target="_blank" rel="noopener">
+          <span class="link-card-title">데이터 도구 챗봇<span class="sr-only"> (새 탭에서 열림)</span></span>
+          <span class="link-card-desc">직접 만들어 배포한 챗봇 — 실제로 켜서 써볼 수 있습니다</span>
           <span class="link-card-go" aria-hidden="true">↗</span>
         </a>
         <a class="link-card" href="#top">
@@ -280,6 +283,25 @@
           <span class="link-card-desc">지금 보고 있는 이 화면 자체가 첫 번째 결과물</span>
           <span class="link-card-go" aria-hidden="true">↑</span>
         </a>
+      </div>
+    </section>
+
+    <section id="guestbook" class="section container" aria-labelledby="guestbook-title">
+      <div class="section-head">
+        <p class="eyebrow">방명록</p>
+        <h2 id="guestbook-title">한마디 남기기</h2>
+        <p class="section-sub">GitHub 계정으로 댓글을 남기면 이 페이지의 방명록이 됩니다. 첫 번째 글의 주인공이 되어 주세요.</p>
+      </div>
+      <div class="guestbook">
+        <p class="guestbook-note">읽고 가셨다면 발자국 하나 찍고 가세요 ✎</p>
+        <script src="https://utteranc.es/client.js"
+                repo="sterran123/about-me"
+                issue-term="pathname"
+                label="방명록"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
       </div>
     </section>
   </main>

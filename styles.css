@@ -1,5 +1,6 @@
 /* ===== 김민기 — 나를 소개하는 한 페이지 ===== */
 :root {
+  --hand: 'Nanum Pen Script', 'Malgun Gothic', cursive;
   --bg: #FFF8F1;
   --surface: #FFFFFF;
   --ink: #26202E;
@@ -225,7 +226,7 @@ body {
 
 /* 손글씨 포인트 */
 .hand-note {
-  font-family: 'Nanum Pen Script', 'Malgun Gothic', cursive;
+  font-family: var(--hand);
   font-size: 1.6rem;
   line-height: 1.2;
   color: var(--coral-deep);
@@ -234,6 +235,15 @@ body {
   margin-bottom: 14px;
 }
 .footer-hand { margin-bottom: 0; }
+
+.motto {
+  font-family: var(--hand);
+  font-size: 1.7rem;
+  color: var(--violet-deep);
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin: 2px 0 16px;
+}
 
 h1 {
   font-size: clamp(2.3rem, 5.2vw, 3.9rem);
@@ -351,8 +361,10 @@ h1 {
 }
 .buddy:hover .buddy-face { animation-play-state: paused; }
 .buddy-bubble {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-family: var(--hand);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  font-weight: 700;
   color: var(--ink);
   background: var(--butter);
   padding: 10px 18px;
@@ -462,10 +474,10 @@ h1 {
 .now-mint { background: #E9F8F2; }
 .now-butter { background: #FFF3D9; }
 .now-label {
-  font-weight: 800;
-  font-size: .78rem;
-  letter-spacing: .1em;
-  margin-bottom: 8px;
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
 }
 .now-lavender .now-label { color: var(--violet-deep); }
 .now-mint .now-label { color: var(--mint-deep); }
@@ -501,10 +513,12 @@ h1 {
   border: 3px solid var(--violet);
 }
 .tl-when {
-  font-weight: 800;
+  font-family: var(--hand);
+  font-weight: 700;
   color: var(--violet-deep);
-  font-size: .85rem;
-  margin-bottom: 2px;
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-bottom: 3px;
 }
 .tl-what { font-size: .95rem; color: var(--ink); }
 
@@ -525,9 +539,10 @@ h1 {
 .section { padding: 72px 0 8px; }
 .section-head { margin-bottom: 34px; }
 h2 {
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  font-weight: 800;
-  letter-spacing: -.02em;
+  font-family: var(--hand);
+  font-size: clamp(2.1rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -.01em;
   margin-bottom: 8px;
 }
 .section-sub { color: var(--ink-2); font-size: 1rem; }
@@ -568,8 +583,14 @@ h2 {
   border-radius: 10px;
   padding: 4px 10px;
 }
-.acc-name { font-size: 1.15rem; font-weight: 800; letter-spacing: -.01em; }
+.acc-name {
+  font-family: var(--hand);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
 .acc-name small {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
   font-size: .85rem;
   font-weight: 600;
   color: var(--ink-2);
@@ -652,15 +673,21 @@ h2 {
   gap: 12px;
 }
 .like-cloud li {
-  padding: 12px 22px;
+  padding: 10px 22px;
   border-radius: 999px;
+  font-family: var(--hand);
   font-weight: 700;
-  font-size: .98rem;
+  font-size: 1.35rem;
   background: var(--surface);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   transition: transform .16s ease, background .16s ease;
 }
+.like-cloud li a {
+  color: inherit;
+  text-decoration: none;
+}
+.like-cloud li a:hover { text-decoration: underline; }
 .like-cloud li:nth-child(4n+1) { transform: rotate(-1.5deg); }
 .like-cloud li:nth-child(4n+3) { transform: rotate(1.5deg); }
 .like-cloud li:hover { transform: translateY(-3px) rotate(0); background: var(--lavender); }
@@ -677,9 +704,10 @@ h2 {
   border: 1px solid var(--line);
 }
 .scope-card h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 16px;
+  font-family: var(--hand);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -737,7 +765,12 @@ h2 {
   box-shadow: var(--shadow-lg);
   border-color: var(--violet);
 }
-.link-card-title { font-size: 1.1rem; font-weight: 800; }
+.link-card-title {
+  font-family: var(--hand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
 .link-card-desc { font-size: .88rem; color: var(--ink-2); }
 .link-card-go {
   position: absolute;
@@ -749,6 +782,21 @@ h2 {
   transition: transform .18s ease;
 }
 .link-card:hover .link-card-go { transform: translate(2px, -2px); }
+
+/* ----- 방명록 ----- */
+.guestbook {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.guestbook-note {
+  font-family: var(--hand);
+  font-size: 1.3rem;
+  color: var(--ink-2);
+  margin-bottom: 14px;
+}
 
 /* ----- 푸터 ----- */
 .site-footer {
