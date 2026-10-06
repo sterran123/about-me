@@ -17,6 +17,7 @@ const bgmFrame = document.getElementById('bgmFrame');
 const bgmNext = document.getElementById('bgmNext');
 const bgmClose = document.getElementById('bgmClose');
 let bgmLast = -1;
+let bgmOpenedAt = 0;
 
 function bgmShuffled() {
   return BGM_VIDEOS.slice().sort(() => Math.random() - 0.5);
@@ -39,6 +40,7 @@ function bgmPlay() {
     `<iframe src="https://www.youtube-nocookie.com/embed/${first}?autoplay=1&rel=0&loop=1&playlist=${list}"` +
     ` title="유튜브 음악 플레이어" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe>`;
   bgmCard.hidden = false;
+  bgmOpenedAt = Date.now();
   bgmChip.setAttribute('aria-expanded', 'true');
   bgmChip.classList.add('playing');
   bgmChip.innerHTML = '<span class="bgm-note" aria-hidden="true">♪</span> 재생 중';
@@ -61,6 +63,15 @@ bgmChip.addEventListener('click', () => {
 });
 bgmNext.addEventListener('click', bgmPlay);
 bgmClose.addEventListener('click', bgmStop);
+
+// 카드 밖을 누르면 재생창만 닫기 (음악은 계속 재생)
+document.addEventListener('click', (e) => {
+  if (Date.now() - bgmOpenedAt < 400) return;   // 방금 연 클릭 자체는 무시
+  if (!bgmCard.hidden && !e.target.closest('#bgm')) {
+    bgmCard.hidden = true;
+    bgmChip.setAttribute('aria-expanded', 'false');
+  }
+});
 
 // 페이지 첫 클릭·터치에 노래 시작 (브라우저 자동재생 정책상 첫 입력이 필요)
 document.addEventListener('pointerdown', function once(e) {
