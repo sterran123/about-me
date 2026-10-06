@@ -522,6 +522,99 @@ h1 {
 }
 .tl-what { font-size: .95rem; color: var(--ink); }
 
+/* ----- 성향 키워드 ----- */
+.trait-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--line);
+}
+.trait-lead {
+  font-family: var(--hand);
+  font-size: 1.25rem;
+  color: var(--ink-2);
+  margin-right: 2px;
+}
+.trait-strip span:not(.trait-lead) {
+  font-family: var(--hand);
+  font-size: 1.25rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.trait-badge {
+  background: var(--violet) !important;
+  color: #fff;
+  border-color: var(--violet) !important;
+  font-weight: 700;
+}
+
+/* ----- 미니 Q&A ----- */
+.qa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.qa-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+}
+.qa-card:nth-child(1) { transform: rotate(-.6deg); }
+.qa-card:nth-child(2) { transform: rotate(.5deg); }
+.qa-card:nth-child(3) { transform: rotate(-.4deg); }
+.qa-card:hover { transform: translateY(-3px) rotate(0); transition: transform .16s ease; }
+.qa-q {
+  font-family: var(--hand);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--violet-deep);
+  margin-bottom: 8px;
+}
+.qa-a { font-size: .93rem; color: var(--ink); }
+
+/* ----- 해보고 싶은 것 ----- */
+.goal-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.goal-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--hand);
+  font-size: 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow);
+}
+.goal-box {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 2.5px solid var(--violet);
+  border-radius: 6px;
+  position: relative;
+}
+.goal-list li:hover .goal-box::after {
+  content: "✓";
+  position: absolute;
+  inset: -8px 0 0 1px;
+  font-size: 1.3rem;
+  color: var(--coral);
+  font-weight: 700;
+}
+
 /* ----- 버디 파티클 ----- */
 .buddy { position: relative; }
 .particle {
@@ -743,22 +836,36 @@ h2 {
 /* ----- 연결 ----- */
 .link-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 .link-card {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 0;
+  overflow: hidden;
   text-decoration: none;
   color: var(--ink);
   box-shadow: var(--shadow);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   position: relative;
+}
+.link-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-bottom: 1px solid var(--line);
+}
+.link-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 22px 24px;
 }
 .link-card:hover {
   transform: translateY(-4px);
@@ -774,11 +881,18 @@ h2 {
 .link-card-desc { font-size: .88rem; color: var(--ink-2); }
 .link-card-go {
   position: absolute;
-  top: 22px;
-  right: 22px;
-  font-size: 1.2rem;
+  top: 14px;
+  right: 14px;
+  font-size: 1rem;
   font-weight: 800;
-  color: var(--violet);
+  color: var(--violet-deep);
+  background: rgba(255, 255, 255, .92);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
   transition: transform .18s ease;
 }
 .link-card:hover .link-card-go { transform: translate(2px, -2px); }
@@ -970,8 +1084,9 @@ html.reduce-motion .reveal { opacity: 1; transform: none; }
   }
   .hero-panel { transform: none; }
   .sar { grid-template-columns: 1fr; }
-  .link-grid { grid-template-columns: 1fr; }
   .now-grid { grid-template-columns: 1fr; }
+  .qa-grid { grid-template-columns: 1fr; }
+  .goal-list { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

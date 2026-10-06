@@ -39,7 +39,7 @@ https://github.com/sterran123/about-me/commit/82f775fd9057dbc6f04ce28214e98f8d20
 | 두 해상도 가로 넘침 | 0건 (scrollWidth ≤ innerWidth) |
 | 모바일 375px 가로 넘침·깨짐 | 없음 (`checks/screenshot-mobile-375.png`) |
 | 제목 단계 건너뜀 | 없음 (H1 → H2 → H3 순) |
-| Tab 이동 순서 | 스킵 링크 → 로고 → 메뉴 → 움직임 토글 → CTA → 버디 → 강점 알약 → 근거 칩 → 아코디언 → 링크 카드, 21개 요소 순서대로 도달 |
+| Tab 이동 순서 | 스킵 링크 → 로고 → 메뉴 → 움직임 토글 → CTA → 버디 → 강점 알약 → 근거 칩 → 아코디언 → 취향 링크 → 작업 카드 → BGM 칩, 22개 요소 순서대로 도달 |
 | Enter/Space 실행 | 아코디언·버디·움직임 스위치 모두 동작 |
 | 텍스트 대비율 | 20개 조합 전부 기준 통과 (`node tools/check-contrast.mjs`) |
 | 콘솔 빨간 오류 | 0건 |
