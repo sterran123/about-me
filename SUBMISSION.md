@@ -6,7 +6,7 @@
 
 ## 소스 저장소 URL (필수)
 
-https://github.com/sterran123/about-me/commit/b20b7557c222f5f19060b9f0d8a8daa0c213236a
+https://github.com/sterran123/about-me/commit/49a764e8bc29cf3ca806d87c8d6bfdddc1f163a1
 
 ## 재현·통과 확인 4가지
 
