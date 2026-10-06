@@ -6,7 +6,9 @@
 
 ## 소스 저장소 URL (필수)
 
-https://github.com/sterran123/about-me/commit/49a764e8bc29cf3ca806d87c8d6bfdddc1f163a1
+https://github.com/sterran123/about-me/commit/82f775fd9057dbc6f04ce28214e98f8d207de653
+
+(제출 폼의 소스 저장소 URL에는 저장소 커밋 목록의 **최신 커밋** URL을 그대로 넣으면 됩니다)
 
 ## 재현·통과 확인 4가지
 
