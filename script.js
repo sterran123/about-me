@@ -50,12 +50,25 @@ const buddy = document.getElementById('buddy');
 const buddyText = document.getElementById('buddyText');
 let greetIndex = 0;
 
+const confetti = ['✨', '💜', '👏', '🙌', '⭐'];
 buddy.addEventListener('click', () => {
   greetIndex = (greetIndex + 1) % greetings.length;
   buddyText.textContent = greetings[greetIndex];
   buddyText.classList.remove('pop');
   void buddyText.offsetWidth; // 애니메이션 다시 재생
   buddyText.classList.add('pop');
+  if (!root.classList.contains('reduce-motion')) {
+    for (let i = 0; i < 5; i++) {
+      const p = document.createElement('span');
+      p.className = 'particle';
+      p.setAttribute('aria-hidden', 'true');
+      p.textContent = confetti[Math.floor(Math.random() * confetti.length)];
+      p.style.left = `${8 + Math.random() * 70}px`;
+      p.style.top = `${Math.random() * 24}px`;
+      buddy.appendChild(p);
+      p.addEventListener('animationend', () => p.remove());
+    }
+  }
 });
 
 // ----- 스크롤 등장 -----
