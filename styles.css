@@ -827,32 +827,64 @@ h2 {
   transform-origin: bottom right;
   animation: pop .3s ease;
 }
+.bgm-now { display: flex; align-items: center; gap: 12px; }
+.bgm-disc {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: repeating-radial-gradient(circle, #26202E 0 3px, #36304A 3px 6px);
+  position: relative;
+  box-shadow: var(--shadow);
+  animation: discSpin 7s linear infinite;
+}
+.bgm-disc::after {
+  content: "";
+  position: absolute;
+  inset: 36%;
+  border-radius: 50%;
+  background: var(--butter);
+  border: 2px solid #FFF8F1;
+}
+@keyframes discSpin { to { transform: rotate(360deg); } }
 .bgm-title {
   font-family: var(--hand);
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  line-height: 1.1;
 }
-.bgm-frame iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 12px;
-  display: block;
+.bgm-sub { font-size: .78rem; color: var(--ink-2); margin-top: 2px; }
+
+/* 영상은 숨기고 소리만 — 재생용 1px 프레임 */
+.bgm-frame {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: .01;
+  pointer-events: none;
 }
-.bgm-actions { display: flex; gap: 8px; margin-top: 10px; }
-.bgm-actions button {
+.bgm-frame iframe { width: 2px; height: 2px; border: 0; display: block; }
+
+.bgm-actions { display: flex; gap: 8px; margin-top: 12px; }
+.bgm-actions button,
+.bgm-actions .bgm-channel {
   flex: 1;
   font: inherit;
   font-size: .85rem;
   font-weight: 700;
-  padding: 9px;
+  padding: 9px 6px;
   border-radius: 12px;
   border: 1px solid var(--line);
   background: var(--bg);
   color: var(--ink);
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
-.bgm-actions button:hover { background: var(--lavender); }
+.bgm-actions button:hover,
+.bgm-actions .bgm-channel:hover { background: var(--lavender); }
 
 /* ----- 방명록 ----- */
 .guestbook {
@@ -861,13 +893,28 @@ h2 {
   border-radius: var(--radius);
   padding: 22px;
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 .guestbook-note {
+  position: relative;
   font-family: var(--hand);
   font-size: 1.3rem;
   color: var(--ink-2);
   margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+.gb-tape {
+  display: inline-block;
+  width: 14px;
+  height: 34px;
+  background: rgba(255, 209, 102, .55);
+  transform: rotate(-8deg);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.guestbook .utterances { border-radius: 14px; }
 
 /* ----- 푸터 ----- */
 .site-footer {

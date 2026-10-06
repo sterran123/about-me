@@ -293,7 +293,7 @@
         <p class="section-sub">GitHub 계정으로 댓글을 남기면 이 페이지의 방명록이 됩니다. 첫 번째 글의 주인공이 되어 주세요.</p>
       </div>
       <div class="guestbook">
-        <p class="guestbook-note">읽고 가셨다면 발자국 하나 찍고 가세요 ✎</p>
+        <p class="guestbook-note"><span class="gb-tape" aria-hidden="true"></span>읽고 가셨다면 발자국 하나 찍고 가세요 ✎</p>
         <script src="https://utteranc.es/client.js"
                 repo="sterran123/about-me"
                 issue-term="pathname"
@@ -308,13 +308,20 @@
 
   <div class="bgm" id="bgm">
     <div class="bgm-card" id="bgmCard" hidden>
-      <p class="bgm-title">밍이뮤직하우스에서 한 곡 ♪</p>
-      <div class="bgm-frame" id="bgmFrame"></div>
+      <div class="bgm-now">
+        <span class="bgm-disc" aria-hidden="true"></span>
+        <div class="bgm-now-text">
+          <p class="bgm-title">지금 재생 중 ♪</p>
+          <p class="bgm-sub">밍이뮤직하우스 · 무작위로 계속</p>
+        </div>
+      </div>
       <div class="bgm-actions">
         <button type="button" id="bgmNext">다른 곡 ↻</button>
+        <a class="bgm-channel" href="https://www.youtube.com/@%EB%B0%8D%EC%9D%B4%EB%AE%A4%EC%A7%81%ED%95%98%EC%9A%B0%EC%8A%A4" target="_blank" rel="noopener">채널 ↗<span class="sr-only">(새 탭에서 열림)</span></a>
         <button type="button" id="bgmClose">끄기 ✕</button>
       </div>
     </div>
+    <div class="bgm-frame" id="bgmFrame" aria-hidden="true"></div>
     <button class="bgm-chip" id="bgmChip" type="button" aria-expanded="false" aria-controls="bgmCard">
       <span class="bgm-note" aria-hidden="true">♪</span> 노래 틀기
     </button>

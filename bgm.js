@@ -1,4 +1,4 @@
-// ===== BGM: 밍이뮤직하우스 채널 곡 랜덤 재생 =====
+// ===== BGM: 밍이뮤직하우스 채널 곡 랜덤·연속 재생 =====
 // 채널 영상 ID 목록 — 새 곡을 올리면 여기에 ID를 추가하면 됩니다
 const BGM_VIDEOS = [
   'XzVaZt1SUtQ', '2Cg3SAJSYek', 'zZNJzBf1IZo', 'nzJPLW7Q1WU',
@@ -18,18 +18,26 @@ const bgmNext = document.getElementById('bgmNext');
 const bgmClose = document.getElementById('bgmClose');
 let bgmLast = -1;
 
-function bgmPick() {
-  let i;
-  do { i = Math.floor(Math.random() * BGM_VIDEOS.length); } while (i === bgmLast);
-  bgmLast = i;
-  return BGM_VIDEOS[i];
+function bgmShuffled() {
+  return BGM_VIDEOS.slice().sort(() => Math.random() - 0.5);
+}
+
+function bgmPick(queue) {
+  // 첫 곡은 이전과 다른 걸로
+  let id;
+  do { id = queue.shift(); } while (id === BGM_VIDEOS[bgmLast] && queue.length);
+  return id;
 }
 
 function bgmPlay() {
-  const id = bgmPick();
+  const queue = bgmShuffled();
+  const first = bgmPick(queue);
+  bgmLast = BGM_VIDEOS.indexOf(first);
+  // playlist: 첫 곡 + 섞인 나머지 — 곡이 끝나면 다음 곡으로 이어지고 다 돌면 반복
+  const list = [first, ...queue].join(',');
   bgmFrame.innerHTML =
-    `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"` +
-    ` title="유튜브 음악 플레이어" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    `<iframe src="https://www.youtube-nocookie.com/embed/${first}?autoplay=1&rel=0&loop=1&playlist=${list}"` +
+    ` title="유튜브 음악 플레이어" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe>`;
   bgmCard.hidden = false;
   bgmChip.setAttribute('aria-expanded', 'true');
   bgmChip.classList.add('playing');
