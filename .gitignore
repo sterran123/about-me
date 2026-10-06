@@ -1,0 +1,3 @@
+.playwright-mcp/
+.fast-agent/
+node_modules/

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="김민기를 처음 만나는 모든 사람에게, 내가 어떤 사람인지 한 화면에서 보여주는 공개 소개 페이지">
+  <title>김민기 — 나를 소개하는 한 페이지</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-violet"></span>
+    <span class="blob blob-coral"></span>
+    <span class="blob blob-mint"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="페이지 맨 위로">민기<span aria-hidden="true">.</span></a>
+      <nav class="site-nav" aria-label="페이지 목차">
+        <a href="#strengths">강점</a>
+        <a href="#likes">좋아하는 것</a>
+        <a href="#scope">공개 범위</a>
+        <a href="#links">연결</a>
+      </nav>
+      <button id="motionToggle" class="motion-toggle" type="button" role="switch" aria-checked="false">
+        <span class="motion-label">움직임 줄이기</span>
+        <span class="motion-track" aria-hidden="true"><span class="motion-thumb"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="top" class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">공개 소개 페이지</p>
+        <h1 id="hero-title">안녕하세요,<br><span class="hl">김민기</span>입니다</h1>
+        <p class="lead">꼼꼼하게 만들고, 끝까지 해내고, 같이 고민하는 사람.</p>
+        <p class="purpose"><span class="purpose-tag">이 페이지의 목적</span> 나를 처음 만나는 누구에게나 — 함께 일할 사람이든, 채용 담당자든, 친구든 — 김민기가 어떤 사람인지 한 화면에서 보여주기 위해 만든 공개 소개입니다.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#strengths">강점 펼쳐보기</a>
+          <a class="btn btn-ghost" href="#links">공개 근거 보기</a>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="활동과 근거 미리보기">
+        <button class="buddy" id="buddy" type="button" aria-describedby="buddy-hint">
+          <svg class="buddy-face" viewBox="0 0 96 96" aria-hidden="true">
+            <rect x="6" y="6" width="84" height="84" rx="30" fill="#6A4CFF"/>
+            <circle cx="34" cy="44" r="6" fill="#FFF8F1"/>
+            <circle cx="62" cy="44" r="6" fill="#FFF8F1"/>
+            <path d="M36 62 Q48 72 60 62" stroke="#FFF8F1" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="76" cy="26" r="5" fill="#FFD166"/>
+          </svg>
+          <span class="buddy-bubble" id="buddyText">안녕하세요!</span>
+          <span class="buddy-hint" id="buddy-hint">눌러서 인사 바꾸기</span>
+        </button>
+
+        <div class="panel-group">
+          <p class="panel-label">활동 · 강점</p>
+          <ul class="strength-pills">
+            <li><a href="#s1">꼼꼼하다</a></li>
+            <li><a href="#s2">최선을 다한다</a></li>
+            <li><a href="#s3">같이 고민한다</a></li>
+          </ul>
+        </div>
+
+        <div class="panel-group">
+          <p class="panel-label">근거</p>
+          <!-- TODO(학생): 소스 저장소 주소를 실제 GitHub 저장소로 교체하세요 -->
+          <a class="evidence-chip" id="repoLink" href="https://github.com/kimmingi-dev/about-me" target="_blank" rel="noopener">
+            이 페이지의 소스 저장소 ↗<span class="sr-only">(새 탭에서 열림)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths" class="section container" aria-labelledby="strengths-title">
+      <div class="section-head">
+        <p class="eyebrow">말이 아니라 근거로</p>
+        <h2 id="strengths-title">강점 3개, 상황 · 행동 · 결과</h2>
+        <p class="section-sub">각 카드를 눌러 펼치면, 그 강점이 실제로 드러난 장면을 볼 수 있습니다.</p>
+      </div>
+
+      <div class="accordion-list">
+        <article class="acc" id="s1">
+          <h3 class="acc-title">
+            <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-1" id="acc-btn-1">
+              <span class="acc-num" aria-hidden="true">01</span>
+              <span class="acc-name">꼼꼼하다 <small>— 마지막까지 다시 눌러보는 편</small></span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="acc-panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
+            <div class="sar">
+              <div class="sar-item">
+                <p class="sar-label">상황</p>
+                <p>처음 만든 웹 페이지를 과제로 제출하기 직전, 이미 늦은 밤이었습니다.</p>
+              </div>
+              <div class="sar-item">
+                <p class="sar-label">행동</p>
+                <p>페이지의 버튼·링크·입력칸을 목록으로 적어 하나씩 다시 눌러 보고, 작은 화면에서 잘리는 곳이 없는지 끝까지 확인했습니다.</p>
+              </div>
+              <div class="sar-item">
+                <p class="sar-label">결과</p>
+                <p>제출 뒤 “안 열리는 곳이 있다”는 피드백 없이 통과했고, 그 점검표는 지금도 매 과제에서 그대로 쓰고 있습니다.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="acc" id="s2">
+          <h3 class="acc-title">
+            <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-2" id="acc-btn-2">
+              <span class="acc-num" aria-hidden="true">02</span>
+              <span class="acc-name">최선을 다한다 <small>— 모르면 문서부터 끝까지</small></span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="acc-panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
+            <div class="sar">
+              <div class="sar-item">
+                <p class="sar-label">상황</p>
+                <p>처음 써보는 Firebase로 로그인과 데이터 저장 기능을 직접 붙여야 했습니다.</p>
+              </div>
+              <div class="sar-item">
+                <p class="sar-label">행동</p>
+                <p>공식 문서와 예제를 처음부터 차례로 따라가며 인증과 데이터베이스 연동을 손수 구현했습니다.</p>
+              </div>
+              <div class="sar-item">
+                <p class="sar-label">결과</p>
+                <p>로그인과 저장이 실제로 동작하는 화면을 배포 주소로 완성해, 다른 사람이 직접 켜보고 확인할 수 있게 남겼습니다.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="acc" id="s3">
+          <h3 class="acc-title">
+            <button class="acc-btn" type="button" aria-expanded="false" aria-controls="acc-panel-3" id="acc-btn-3">
+              <span class="acc-num" aria-hidden="true">03</span>
+              <span class="acc-name">남들의 문제를 같이 고민한다 <small>— 막힌 자리에 같이 앉는 편</small></span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="acc-panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
+            <div class="sar">
+              <div class="sar-item">
+                <p class="sar-label">상황</p>
+                <p>옆 자리 사람이 오류 메시지를 어떻게 읽어야 할지 몰라 진행이 멈춰 있었습니다.</p>
+              </div>
+              <div class="sar-item">
+                <p class="sar-label">행동</p>
+                <p>화면을 같이 보며 오류 문장을 한 줄씩 따라가 원인이 있을 만한 곳을 함께 좁혀 나갔습니다.</p>
+              </div>
+              <div class="sar-item">
+                <p class="sar-label">결과</p>
+                <p>원인을 찾아 같이 고쳤고, 그 뒤로 주변에서 “이것 좀 같이 봐줘”라고 먼저 찾는 사람이 됐습니다.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="likes" class="section container" aria-labelledby="likes-title">
+      <div class="section-head">
+        <p class="eyebrow">취향</p>
+        <h2 id="likes-title">좋아하는 것</h2>
+      </div>
+      <ul class="like-cloud">
+        <li>Firebase</li>
+        <li>체크리스트</li>
+        <li>콘솔 오류 0 만들기</li>
+        <li>문서 정리</li>
+        <li>작은 도구 만들기</li>
+        <li>새 기능 직접 켜보기</li>
+        <li>밤의 집중 시간</li>
+      </ul>
+    </section>
+
+    <section id="scope" class="section container" aria-labelledby="scope-title">
+      <div class="section-head">
+        <p class="eyebrow">직접 정한 선</p>
+        <h2 id="scope-title">공개 범위</h2>
+        <p class="section-sub">이력서가 아니라, 내가 정한 만큼만 보여주는 페이지입니다.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-card scope-open">
+          <h3>공개합니다</h3>
+          <ul>
+            <li>이름(김민기)과 한 줄 소개</li>
+            <li>강점 3개와 그 근거가 된 경험</li>
+            <li>공개 가능한 작업·저장소 링크</li>
+            <li>좋아하는 도구와 취향</li>
+          </ul>
+        </div>
+        <div class="scope-card scope-closed">
+          <h3>공개하지 않습니다</h3>
+          <ul>
+            <li>연락처 · 주소 · 생년월일 등 신원 정보</li>
+            <li>얼굴 사진</li>
+            <li>비밀번호 · API 키 · 비공개 저장소 주소</li>
+            <li>가족 · 지인 등 다른 사람의 정보</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="section container" aria-labelledby="links-title">
+      <div class="section-head">
+        <p class="eyebrow">확인할 수 있는 것</p>
+        <h2 id="links-title">연결과 근거</h2>
+      </div>
+      <div class="link-grid">
+        <!-- TODO(학생): href를 실제 GitHub 저장소 주소로 교체하세요 -->
+        <a class="link-card" href="https://github.com/kimmingi-dev/about-me" target="_blank" rel="noopener">
+          <span class="link-card-title">소스 저장소<span class="sr-only"> (새 탭에서 열림)</span></span>
+          <span class="link-card-desc">이 페이지의 코드 전체 — 꼼꼼함의 실제 근거</span>
+          <span class="link-card-go" aria-hidden="true">↗</span>
+        </a>
+        <!-- TODO(학생): Firebase로 배포한 작업 주소가 있다면 교체하세요. 없으면 이 카드를 삭제해도 됩니다 -->
+        <a class="link-card" href="https://firebase.google.com/docs" target="_blank" rel="noopener">
+          <span class="link-card-title">주로 쓰는 도구: Firebase<span class="sr-only"> (새 탭에서 열림)</span></span>
+          <span class="link-card-desc">인증·데이터베이스·호스팅까지 직접 붙여본 도구</span>
+          <span class="link-card-go" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="#top">
+          <span class="link-card-title">이 페이지</span>
+          <span class="link-card-desc">지금 보고 있는 이 화면 자체가 첫 번째 결과물</span>
+          <span class="link-card-go" aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> 김민기 — 내가 공개 범위를 정해 직접 만든 한 페이지입니다.</p>
+      <a href="#top">맨 위로 ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
