@@ -1,0 +1,57 @@
+// ===== BGM: 밍이뮤직하우스 채널 곡 랜덤 재생 =====
+// 채널 영상 ID 목록 — 새 곡을 올리면 여기에 ID를 추가하면 됩니다
+const BGM_VIDEOS = [
+  'XzVaZt1SUtQ', '2Cg3SAJSYek', 'zZNJzBf1IZo', 'nzJPLW7Q1WU',
+  '2_xHrlp0C3g', 'l74aSQvRDis', 'swnUS7gCHZY', 'D3CAvyKLjhI',
+  '1xZ8Lgn7Xbg', 'vDw5V3pSgs8',
+];
+
+const bgmChip = document.getElementById('bgmChip');
+const bgmCard = document.getElementById('bgmCard');
+const bgmFrame = document.getElementById('bgmFrame');
+const bgmNext = document.getElementById('bgmNext');
+const bgmClose = document.getElementById('bgmClose');
+let bgmLast = -1;
+
+function bgmPick() {
+  let i;
+  do { i = Math.floor(Math.random() * BGM_VIDEOS.length); } while (i === bgmLast);
+  bgmLast = i;
+  return BGM_VIDEOS[i];
+}
+
+function bgmPlay() {
+  const id = bgmPick();
+  bgmFrame.innerHTML =
+    `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"` +
+    ` title="유튜브 음악 플레이어" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  bgmCard.hidden = false;
+  bgmChip.setAttribute('aria-expanded', 'true');
+  bgmChip.classList.add('playing');
+  bgmChip.innerHTML = '<span class="bgm-note" aria-hidden="true">♪</span> 재생 중';
+}
+
+function bgmStop() {
+  bgmFrame.innerHTML = '';
+  bgmCard.hidden = true;
+  bgmChip.setAttribute('aria-expanded', 'false');
+  bgmChip.classList.remove('playing');
+  bgmChip.innerHTML = '<span class="bgm-note" aria-hidden="true">♪</span> 노래 틀기';
+}
+
+bgmChip.addEventListener('click', () => {
+  if (bgmFrame.innerHTML === '') bgmPlay();
+  else {
+    bgmCard.hidden = !bgmCard.hidden;
+    bgmChip.setAttribute('aria-expanded', String(!bgmCard.hidden));
+  }
+});
+bgmNext.addEventListener('click', bgmPlay);
+bgmClose.addEventListener('click', bgmStop);
+
+// 페이지 첫 클릭·터치에 노래 시작 (브라우저 자동재생 정책상 첫 입력이 필요)
+document.addEventListener('pointerdown', function once(e) {
+  if (e.target.closest('#bgm')) return;      // 칩·카드 자체는 각 버튼이 처리
+  document.removeEventListener('pointerdown', once);
+  if (bgmFrame.innerHTML === '') bgmPlay();
+});

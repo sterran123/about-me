@@ -306,6 +306,20 @@
     </section>
   </main>
 
+  <div class="bgm" id="bgm">
+    <div class="bgm-card" id="bgmCard" hidden>
+      <p class="bgm-title">밍이뮤직하우스에서 한 곡 ♪</p>
+      <div class="bgm-frame" id="bgmFrame"></div>
+      <div class="bgm-actions">
+        <button type="button" id="bgmNext">다른 곡 ↻</button>
+        <button type="button" id="bgmClose">끄기 ✕</button>
+      </div>
+    </div>
+    <button class="bgm-chip" id="bgmChip" type="button" aria-expanded="false" aria-controls="bgmCard">
+      <span class="bgm-note" aria-hidden="true">♪</span> 노래 틀기
+    </button>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year">2026</span> 김민기 — 내가 공개 범위를 정해 직접 만든 한 페이지입니다.</p>
@@ -314,6 +328,7 @@
     </div>
   </footer>
 
+  <script src="bgm.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
