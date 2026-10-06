@@ -3,7 +3,12 @@
 const BGM_VIDEOS = [
   'XzVaZt1SUtQ', '2Cg3SAJSYek', 'zZNJzBf1IZo', 'nzJPLW7Q1WU',
   '2_xHrlp0C3g', 'l74aSQvRDis', 'swnUS7gCHZY', 'D3CAvyKLjhI',
-  '1xZ8Lgn7Xbg', 'vDw5V3pSgs8',
+  '1xZ8Lgn7Xbg', 'vDw5V3pSgs8', 'cxSYdVnnRpA', 'mZ2xUMd8OhM',
+  'XT85cXAz4js', 'wmlCkUErEEo', 'cHaV5ROq8PI', 'ty2CNMmtW9g',
+  'fKvlP8kYNDg', 'nx2d2N6FoPc', 'whyO4QtQdcY', 'p9BQZr0ZEso',
+  'bbLrq3yP8JQ', 'QQkDRtB9dJo', '97SfV6JaJnQ', 'CqTPSBJGNnY',
+  'CmFrIlC-AuQ', 'kKOTGhASCN0', '0aCoGMmS4eE', 'uy0jYzmOM2A',
+  '8M4wcht2fbM', 'R0cyFWY8XI4',
 ];
 
 const bgmChip = document.getElementById('bgmChip');
